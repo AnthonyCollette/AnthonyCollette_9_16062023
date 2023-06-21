@@ -147,8 +147,8 @@ export default class {
 
     bills.forEach(bill => {
       $(`#open-bill${bill.id}`).click((e) => {
+        e.stopImmediatePropagation()
         this.handleEditTicket(e, bill, bills)
-        console.log(bill)
       })
     })
 
