@@ -35,5 +35,28 @@ describe("Given I am connected as an employee", () => {
       const datesSorted = dates.sort(antiChrono)
       expect(dates).toEqual(datesSorted)
     })
+    test("Then I should be redirected on New Bill page when I click on New Bill button", () => {
+      document.body.innerHTML = BillsUI({ data: bills })
+      const newBillButton = screen.getByTestId('btn-new-bill')
+      expect(newBillButton).toBeTruthy()
+      newBillButton.click()
+      expect(setTimeout).toContain(expect(window.location.href).toContain('/bill/new'), 2000)
+      
+    })
   })
 })
+
+// Test d'intégration GET
+// describe("Given I am a user connected as Admin", () => {
+//   describe("When I am on Bills Page", () => {
+//     test("Then fetches bills from mock API GET", async () => {
+//       localStorage.setItem("user", JSON.stringify({ type: "Admin", email: "a@a" }));
+//       const root = document.createElement("div")
+//       root.setAttribute("id", "root")
+//       document.body.append(root)
+//       router()
+//       window.onNavigate(ROUTES_PATH.Bills)
+
+//     })
+//   })
+// })
