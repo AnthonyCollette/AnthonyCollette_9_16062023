@@ -59,7 +59,7 @@ const mockedBills = {
         "commentary": "test2",
         "type": "Restaurants et bars",
         "fileUrl": "https://test.storage.tld/v0/b/billable-677b6.a…f-1.jpg?alt=media&token=4df6ed2c-12c8-42a2-b013-346c1346f732"
-      }])
+      },])
 
   },
   create(bill) {
