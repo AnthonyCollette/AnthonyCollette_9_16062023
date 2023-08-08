@@ -30,7 +30,7 @@ describe("Given I am connected as an employee", () => {
       datepicker.value = "2021-01-01"
       file.type === "exe"
 
-      // set file
+      // Set File
       const Justificatif = new File(["img"], "justificatif.pdf", {type: "application/pdf"})
       const btnChange = screen.getByTestId('file')
 

@@ -32,9 +32,11 @@ export default class {
       return this.store
       .bills()
       .list()
-      .then((snapshot) => {
+      .then(snapshot => {
+        snapshot.sort((a,b) => {
+          return new Date(b.date) - new Date(a.date)
+        })
         const bills = snapshot
-          .sort((a,b) => new Date(b.date) - new Date(a.date))
           .map(doc => {
             try {
               return {
