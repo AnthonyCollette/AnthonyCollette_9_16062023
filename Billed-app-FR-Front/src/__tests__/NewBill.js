@@ -57,7 +57,7 @@ describe("Given I am connected as an employee", () => {
       expect(msgWarning.classList).toContain("hidden")
     })
 
-    test("If form's data is correct, new bill is created, and we should navigate to Bills", async () => {
+    test("If form's data is correct, new bill is created", async () => {
       const html = NewBillUI()
       document.body.innerHTML = html
 

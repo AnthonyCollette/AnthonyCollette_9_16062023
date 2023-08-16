@@ -15,6 +15,7 @@ export default class NewBill {
     this.billId = null
     new Logout({ document, localStorage, onNavigate })
   }
+  
   handleChangeFile = e => {
     e.preventDefault()
     const file = this.document.querySelector(`input[data-testid="file"]`).files[0]
@@ -29,16 +30,8 @@ export default class NewBill {
       msgWarning.classList.remove('hidden')
       this.document.querySelector(`input[data-testid="file"]`).value = ''
     }
-    // if(file.name.match(/\.(jpg|jpeg|png|JPG|JPEG|PNG)$/)) {
-
-    //   // const filePath = e.target.value.split(/\\/g)
-    //   // const fileName = filePath[filePath.length - 1]
-    //   // this.file = file
-    //   // this.fileName = fileName
-    // } 
-
-
   }
+
   handleSubmit = e => {
     e.preventDefault()
 
