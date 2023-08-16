@@ -7,7 +7,7 @@ import userEvent from "@testing-library/user-event"
 import Bills from "../containers/Bills.js"
 import BillsUI from "../views/BillsUI.js"
 import { bills } from "../fixtures/bills.js"
-import { ROUTES_PATH, ROUTES } from "../constants/routes.js";
+import { ROUTES_PATH } from "../constants/routes.js";
 import { localStorageMock } from "../__mocks__/localStorage.js";
 import mockStore from "../__mocks__/store.js";
 
@@ -85,43 +85,6 @@ describe("Given I am connected as an employee", () => {
       userEvent.click(eyeIcon)
       expect(handleEyeIcon).toHaveBeenCalled()
       expect(screen.getByText('Justificatif')).toBeTruthy()
-
-      // const modal = screen.queryByRole('dialog', { hidden: true })
-  
-      // // await waitFor(() => eyeIcon[0].click())
-      // eyeIcon[0].click()
-
-      // // FONCTIONNE
-      // // expect(screen.queryByRole('dialog', {hidden: true})).not.toBe(null)
-      // // expect(screen.queryByRole('dialog', {hidden: true})).toBeTruthy()
-      // // expect(screen.getByText('Justificatif')).toBeTruthy()
-
-      // // NE FONCTIONNE PAS
-      // expect(modal.classList).toContain('show')
-
-      // expect(modal).toHaveProperty('display', 'block');
-
     })
   })
 })
-
-// Test d'intégration GET
-// describe("Given I am a user connected as Admin", () => {
-//   describe("When I am on Bills Page", () => {
-//     test("Then fetches bills from mock API GET", async () => {
-//       localStorage.setItem("user", JSON.stringify({ type: "Admin", email: "a@a" }));
-//       const root = document.createElement("div")
-//       root.setAttribute("id", "root")
-//       document.body.append(root)
-//       router()
-//       window.onNavigate(ROUTES_PATH.Bills)
-
-//     })
-//   })
-// })
-
-// describe("Given I am a user connected as Employee", () => {
-//   describe("When I am on Bills page", () => {
-
-//   })
-// })

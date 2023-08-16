@@ -4,7 +4,7 @@
 
 import LoginUI from "../views/LoginUI";
 import Login from "../containers/Login.js";
-import { ROUTES } from "../constants/routes";
+import { ROUTES, ROUTES_PATH } from "../constants/routes";
 import { fireEvent, screen } from "@testing-library/dom";
 
 describe("Given that I am a user on login page", () => {
@@ -114,7 +114,55 @@ describe("Given that I am a user on login page", () => {
     test("It should renders Bills page", () => {
       expect(screen.getAllByText("Mes notes de frais")).toBeTruthy();
     });
-    
+
+    // test("If I have no account, a new user is created", () => {
+    //   document.body.innerHTML = LoginUI();
+
+    //   const inputEmailUser = screen.getByTestId("employee-email-input");
+    //   fireEvent.change(inputEmailUser, { target: { value: "compteinexistant@gmail.com" } });
+    //   expect(inputEmailUser.value).toBe("compteinexistant@gmail.com");
+
+    //   const inputPasswordUser = screen.getByTestId("employee-password-input");
+    //   fireEvent.change(inputPasswordUser, {
+    //     target: { value: "MonSuperMotDePasse" },
+    //   });
+    //   expect(inputPasswordUser.value).toBe("MonSuperMotDePasse");
+
+    //   const form = screen.getByTestId("form-employee");
+
+    //   const onNavigate = (pathname) => {
+    //     document.body.innerHTML = ROUTES({ pathname });
+    //   };
+
+    //   let PREVIOUS_LOCATION = "";
+
+    //   const store = jest.fn();
+
+    //   const login = new Login({
+    //     document,
+    //     localStorage: window.localStorage,
+    //     onNavigate,
+    //     PREVIOUS_LOCATION,
+    //     store,
+    //   });
+
+    //   const spy = jest.spyOn(login, "createUser");
+
+    //   const handleSubmit = jest.fn((e) => {
+    //     login.handleSubmitEmployee(e)
+    //   })
+    //   // const handleCreate = jest.fn((e) => {
+    //   //   login.createUser(e)
+    //   // })
+
+    //   form.submit()
+
+    //   // form.addEventListener("submit", handleSubmit);
+    //   // fireEvent.submit(form);
+
+    //   expect(spy).toHaveBeenCalled()
+    // })
+
   });
 });
 
